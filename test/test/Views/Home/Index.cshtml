@@ -1,0 +1,64 @@
+﻿@using test.ViewModel
+@model IndexViewModel
+
+@{
+    ViewBag.Title = "產品列表";
+}
+
+
+<div id="themeSlider" class="carousel slide mb-4" data-ride="carousel">
+    <div class="carousel-inner ">
+        @{foreach (var item in Model.carousels)
+            {
+                <div class="item active">
+                    <div class="imgOverlay"></div>
+                    <img style="height:630px;width:100%" src="~/Img/@item.carouselImg" alt="First slide">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <a class="carousel-control-prev" href="#themeSlider" data-slide="prev"></a>
+    <a class="carousel-control-next" href="#themeSlider" data-slide="next"></a>
+
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>最新上架商品 </h2>
+        </div>
+    </div>
+</div>
+<div class="row product-container">
+
+    @{
+        foreach (var item in Model.spu)
+        {
+            <div class="box col-12 col-sm-6 col-md-4 col-lg-3 " style="margin-bottom:8px">
+                <div class="thumbnail" product-item style="height:450px">
+                    <img class="img-responsive" title="Click to View Product detail" style="cursor:pointer; height:306px;width:306px"
+                         src="~/Content/Img/@item.spuImg1" />
+                    <div class="caption " style="height:40px">
+                        <h5>@item.spuName</h5>
+                    </div>
+                    <div class="caption">
+                        <p>$@item.spuPrice</p>
+                    </div>
+                    <div class="caption d-flex justify-content-between">
+                        <button class="btn shadow-none" style="outline:0;"><i class="far fa-heart"></i></button>
+                        <button class="btn shadow-none" style="outline:0;"><i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</div>
+<div class="d-flex justify-content-center ">
+    <button class="btn shadow-none" style="outline:0;">瀏覽更多</button>
+</div>

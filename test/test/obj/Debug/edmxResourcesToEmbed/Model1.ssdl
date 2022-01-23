@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="shop123Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="carousel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catalogAId" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="catalogBId" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="carouselImg" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memberId" Type="int" Nullable="false" />
+    <Property Name="spuId" Type="int" Nullable="false" />
+    <Property Name="num" Type="int" Nullable="false" />
+    <Property Name="totalPrice" Type="int" Nullable="false" />
+    <Property Name="paid" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="catalogA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catalogAName" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="catalogB">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catalogBName" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memberId" Type="int" Nullable="false" />
+    <Property Name="orderDetailId" Type="int" Nullable="false" />
+    <Property Name="comment" Type="nvarchar" MaxLength="255" />
+    <Property Name="score" Type="int" Nullable="false" />
+    <Property Name="skuId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="delivery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="deliveryType" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DeliveryState" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="like">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="spuId" Type="int" Nullable="false" />
+    <Property Name="memberId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="member">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memberAccount" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="memberPassword" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="memberName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="memberPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="memberEmail" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="memberImg" Type="nvarchar" MaxLength="255" />
+    <Property Name="memberBanned" Type="bit" />
+    <Property Name="memberAccess" Type="int" Nullable="false" />
+    <Property Name="memberCreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memberId" Type="int" Nullable="false" />
+    <Property Name="deliveryId" Type="int" Nullable="false" />
+    <Property Name="orderCreateTime" Type="datetime" Nullable="false" />
+    <Property Name="orderPaymentTime" Type="datetime" />
+    <Property Name="receiverName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="receiverAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="receiverEmail" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="receiverPhone" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="orderState" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="refundId" Type="int" />
+    <Property Name="totalPrice" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="skuId" Type="int" Nullable="false" />
+    <Property Name="orderDetailsize" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="orderDetailcolor" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="orderDetailnum" Type="int" Nullable="false" />
+    <Property Name="orderDetailprice" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="refund">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="refundState" Type="int" Nullable="false" />
+    <Property Name="refundReason" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sku">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="spuId" Type="int" Nullable="false" />
+    <Property Name="skuColor" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="skuSize" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="skuImg" Type="nvarchar" MaxLength="255" />
+    <Property Name="skuStock" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="spuName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="memberId" Type="int" Nullable="false" />
+    <Property Name="spuInfo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="spuPrice" Type="int" Nullable="false" />
+    <Property Name="catalogAId" Type="int" Nullable="false" />
+    <Property Name="catalogBId" Type="int" Nullable="false" />
+    <Property Name="spuImg1" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="spuImg2" Type="nvarchar" MaxLength="255" />
+    <Property Name="spuImg3" Type="nvarchar" MaxLength="255" />
+    <Property Name="spuImg4" Type="nvarchar" MaxLength="255" />
+    <Property Name="spuImg5" Type="nvarchar" MaxLength="255" />
+    <Property Name="spuShow" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="spuCreatedTime" Type="datetime" Nullable="false" />
+    <Property Name="spuEditTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="shop123ModelStoreContainer">
+    <EntitySet Name="carousel" EntityType="Self.carousel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cart" EntityType="Self.cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="catalogA" EntityType="Self.catalogA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="catalogB" EntityType="Self.catalogB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="comment" EntityType="Self.comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="delivery" EntityType="Self.delivery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="like" EntityType="Self.like" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderDetail" EntityType="Self.orderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="refund" EntityType="Self.refund" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sku" EntityType="Self.sku" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="spu" EntityType="Self.spu" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
