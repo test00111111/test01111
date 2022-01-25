@@ -1,24 +1,18 @@
-﻿@model test.ViewModel.CommonViewModel
+﻿@model IEnumerable<test.Models.spu>
+
 @{
     ViewBag.Title = "categoryPage";
+    int cat = 0;
 }
-
-
 
 <div class="row">
     <div class="box col-4  col-sm-4 col-md-2 ">
-        <ul>
-            @foreach (var item in Model.category)
-            {
+        @Html.Action("_categoryB", "Common", new { catA = 1 })
 
-                <li class="list-unstyled">@item.catalogBName</li>
-
-            }
-        </ul>
     </div>
-    <div class="box cos-8  col-sm-8 col-md-10 mt-5 ">
+    <div class="box cos-8  col-sm-8 col-md-10 mt-5 ">        
         @{
-            foreach (var item in Model.spu)
+            foreach (var item in Model)
             {
                 <div class="box col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" style="margin-bottom:8px">
                     <div class="thumbnail" style="width: 100%;">

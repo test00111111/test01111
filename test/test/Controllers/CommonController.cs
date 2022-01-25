@@ -23,37 +23,6 @@ namespace test.Controllers
             vw.spu = spu;
             return View(vw);
         }
-
-        public ActionResult WOMAN()
-        {
-            //var category = db.catalogB.ToList();
-            //var spu = db.spu.Where(m => m.catalogAId == 1).ToList();
-
-            //CommonViewModel vw = new CommonViewModel();
-            //vw.category = category;
-            //vw.spu = spu;
-            //return View(vw);
-            var category = db.catalogB.ToList();
-           return View(category);
-        }
-        public ActionResult MAN()
-        {
-            var category = db.catalogB.ToList();            
-            return View(category);
-        }
-        public ActionResult KIDS()
-        {
-            var category = db.catalogB.ToList();
-           
-            return View(category);
-        }
-        public ActionResult BABY()
-        {
-            var category = db.catalogB.ToList();
-         
-            return View(category);
-        }
-
         public ActionResult _categorySPU(int catA, int catB)
         {
             List<spu> spu;
@@ -79,10 +48,14 @@ namespace test.Controllers
 
         public ActionResult categoryPage(int catalogAId)
         {
-            
-            var category = db.spu
-                .Where(m => m.catalogAId == catalogAId).ToList();            
-            return View(category);
+            var cat = db.catalogB.Where(m => m.catalogAId == catalogAId).ToList();
+            var spu = db.spu.Where(m => m.catalogAId == catalogAId).ToList();
+            CommonViewModel vw = new CommonViewModel();
+            vw.category = cat;
+            vw.spu= spu;
+           
+            return View(vw);
+
         }
 
     }

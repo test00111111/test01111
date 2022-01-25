@@ -256,9 +256,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Common\WOMAN.cshtml" />
-    <Content Include="Views\Common\MAN.cshtml" />
-    <Content Include="Views\Common\KIDS.cshtml" />
     <Content Include="Views\Common\BABY.cshtml" />
     <Content Include="Views\Common\Common.cshtml" />
     <Content Include="Views\spus\Create.cshtml" />
@@ -270,6 +267,7 @@
     <Content Include="Views\Shared\_categoryB.cshtml" />
     <Content Include="Views\Shared\_categoryA.cshtml" />
     <Content Include="Views\Common\categoryPage.cshtml" />
+    <Content Include="Views\Common\categoryPage - 複製.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
