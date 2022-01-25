@@ -76,7 +76,6 @@ F:\test\test\test\bin\System.Web.WebPages.Razor.xml
 F:\test\test\test\bin\Newtonsoft.Json.xml
 F:\test\test\test\bin\Antlr3.Runtime.pdb
 F:\test\test\test\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\test\test\test\bin\zh-Hant\EntityFramework.resources.dll
 F:\test\test\test\bin\zh-Hant\System.Web.Helpers.resources.dll
 F:\test\test\test\bin\zh-Hant\System.Web.Mvc.resources.dll
 F:\test\test\test\bin\zh-Hant\System.Web.Optimization.resources.dll

@@ -1,0 +1,136 @@
+﻿@model test.Models.spu
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>spu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.spuName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memberId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memberId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.catalogAId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.catalogAId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.catalogBId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.catalogBId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuImg1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuImg1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuImg2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuImg2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuImg3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuImg3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuImg4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuImg4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuImg5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuImg5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuShow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuShow)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuCreatedTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuCreatedTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spuEditTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spuEditTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

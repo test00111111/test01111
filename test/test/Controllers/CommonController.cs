@@ -15,56 +15,75 @@ namespace test.Controllers
         // GET: Home
         public ActionResult Common()
         {
-            var carousel=db.carousel.ToList();
-            var spu=db.spu.OrderByDescending(m=>m.spuCreatedTime).ToList();
+            var carousel = db.carousel.ToList();
+            var spu = db.spu.OrderByDescending(m => m.spuCreatedTime).ToList();
 
             CommonViewModel vw = new CommonViewModel();
             vw.carousels = carousel;
             vw.spu = spu;
-            return View(vw);         
+            return View(vw);
         }
 
         public ActionResult WOMAN()
         {
-            var category = db.catalogB.ToList();
-            var spu = db.spu.Where(m=>m.catalogAId==1).ToList();
+            //var category = db.catalogB.ToList();
+            //var spu = db.spu.Where(m => m.catalogAId == 1).ToList();
 
-            CommonViewModel vw = new CommonViewModel();
-            vw.category = category;
-            vw.spu = spu;
-            return View(vw);
+            //CommonViewModel vw = new CommonViewModel();
+            //vw.category = category;
+            //vw.spu = spu;
+            //return View(vw);
+            var category = db.catalogB.ToList();
+           return View(category);
         }
-         public ActionResult MAN()
+        public ActionResult MAN()
+        {
+            var category = db.catalogB.ToList();            
+            return View(category);
+        }
+        public ActionResult KIDS()
         {
             var category = db.catalogB.ToList();
-            var spu = db.spu.Where(m => m.catalogAId == 2).ToList();
-
-            CommonViewModel vw = new CommonViewModel();
-            vw.category = category;
-            vw.spu = spu;
-            return View(vw);
+           
+            return View(category);
         }
-         public ActionResult KIDS()
+        public ActionResult BABY()
         {
             var category = db.catalogB.ToList();
-            var spu = db.spu.Where(m => m.catalogAId == 3).ToList();
-
-            CommonViewModel vw = new CommonViewModel();
-            vw.category = category;
-            vw.spu = spu;
-            return View(vw);
+         
+            return View(category);
         }
-         public ActionResult BABY()
+
+        public ActionResult _categorySPU(int catA, int catB)
         {
-            var category = db.catalogB.ToList();
-            var spu = db.spu.Where(m => m.catalogAId == 4).ToList();
-
-            CommonViewModel vw = new CommonViewModel();
-            vw.category = category;
-            vw.spu = spu;
-            return View(vw);
+            List<spu> spu;
+            if (catB == 0)
+                spu = db.spu.Where(m => m.catalogAId == catA).ToList();
+            else
+                spu = db.spu.Where(m => m.catalogAId == catA && m.catalogBId==catB).ToList();
+            return PartialView("_categorySPU", spu);
         }
 
-        
+        public ActionResult _categoryB(int catA)
+        {
+            List<catalogB> catalog;           
+                catalog = db.catalogB.Where(m => m.catalogAId == catA).ToList();  
+            return PartialView("_categoryB", catalog);
+        }
+        public ActionResult _categoryA()
+        {
+            List<catalogA> catalog;           
+                catalog = db.catalogA.ToList();  
+            return PartialView("_categoryA", catalog);
+        }
+
+        public ActionResult categoryPage(int catalogAId)
+        {
+            
+            var category = db.spu
+                .Where(m => m.catalogAId == catalogAId).ToList();            
+            return View(category);
+        }
+
     }
 }

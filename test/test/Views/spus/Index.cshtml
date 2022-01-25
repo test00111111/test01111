@@ -1,0 +1,76 @@
+﻿@model IEnumerable<test.Models.spu>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("新增商品", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.spuName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.memberId)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.spuPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catalogAId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catalogBId)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.spuShow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spuCreatedTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spuEditTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.spuName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.memberId)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.spuPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.catalogAId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.catalogBId)
+        </td>       
+        <td>
+            @Html.DisplayFor(modelItem => item.spuShow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spuCreatedTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spuEditTime)
+        </td>
+        <td>
+            @Html.ActionLink("修改", "Edit", new { id=item.id }) |
+            @Html.ActionLink("詳細資料", "Details", new { id=item.id }) |
+            @Html.ActionLink("刪除", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

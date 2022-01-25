@@ -33,6 +33,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="catalogBName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="catalogAId" Type="Int32" />
   </EntityType>
   <EntityType Name="comment">
     <Key>

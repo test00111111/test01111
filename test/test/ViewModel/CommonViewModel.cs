@@ -11,5 +11,9 @@ namespace test.ViewModel
         public IEnumerable<carousel> carousels { get; set; }
         public IEnumerable<spu> spu { get; set; }
         public IEnumerable<catalogB> category { get; set; }
+
+        public IEnumerable<catalogA> categoryA { get; set; }
+
+        
     }
 }

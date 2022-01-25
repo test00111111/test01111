@@ -33,6 +33,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="catalogBName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="catalogAId" Type="int" />
   </EntityType>
   <EntityType Name="comment">
     <Key>

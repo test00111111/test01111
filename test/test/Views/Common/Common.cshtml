@@ -15,27 +15,6 @@
     }
 </style>
 
-@*<div id="themeSlider" class="carousel slide mb-4 container-fluid" data-ride="carousel">
-        <div class="carousel-inner ">
-            @{foreach (var item in Model.carousels.Take(1))
-                {
-                    <div class="item active">
-                        <img style="width:100%" src="~/Content/Img/@item.carouselImg" alt="First slide">
-                    </div>
-                }
-            }
-            @{foreach (var item in Model.carousels.Skip(1))
-                {
-                    <div class="item ">
-                        <img style="width:100%" src="~/Content/Img/@item.carouselImg" alt="First slide">
-                    </div>
-                }
-            }
-        </div>
-        <a class="carousel-control-prev" href="#themeSlider" data-slide="prev"></a>
-        <a class="carousel-control-next" href="#themeSlider" data-slide="next"></a>
-
-    </div>*@
 <div class="owl-carousel owl-theme owl-nav">
     @{foreach (var item in Model.carousels)
         {

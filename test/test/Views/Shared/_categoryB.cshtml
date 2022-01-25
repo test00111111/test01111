@@ -1,0 +1,10 @@
+﻿@model IEnumerable<test.Models.catalogB>
+
+@{ foreach (var item in Model)
+    {
+        <ul>
+            <li class="list-unstyled">@Html.ActionLink(item.catalogBName, " ", " ", new { @class = "text-dark  text-decoration-none " })</li>
+        </ul>
+    }
+
+}

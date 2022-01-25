@@ -1,0 +1,10 @@
+﻿@model IEnumerable<test.Models.catalogA>
+
+
+@foreach (var item in Model)
+{
+<div class="col-12 col-sm-2 text-center">
+    <a href="@Url.Action("categoryPage")?catalogAId=@item.id" class="text-dark text-decoration-none">@item.catalogAName</a>
+</div>
+}
+

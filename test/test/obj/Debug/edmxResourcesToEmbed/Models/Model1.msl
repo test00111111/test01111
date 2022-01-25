@@ -34,6 +34,7 @@
     <EntitySetMapping Name="catalogB">
       <EntityTypeMapping TypeName="shop123Model.catalogB">
         <MappingFragment StoreEntitySet="catalogB">
+          <ScalarProperty Name="catalogAId" ColumnName="catalogAId" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="catalogBName" ColumnName="catalogBName" />
         </MappingFragment>
